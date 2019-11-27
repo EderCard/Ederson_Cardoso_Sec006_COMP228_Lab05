@@ -12,36 +12,81 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ederson_cardoso_exercise1.DentalPaymentController">
    <children>
-      <Label layoutX="11.0" layoutY="71.0" text="Name of patient:" />
-      <Label layoutX="51.0" layoutY="114.0" text="Address:" />
-      <Label layoutX="431.0" layoutY="43.0" text="Dental Services Available" />
+      <Label layoutX="11.0" layoutY="71.0" text="Name of patient:">
+         <font>
+            <Font size="12.0" />
+         </font></Label>
+      <Label layoutX="51.0" layoutY="114.0" text="Address:">
+         <font>
+            <Font size="12.0" />
+         </font></Label>
+      <Label layoutX="431.0" layoutY="43.0" text="Dental Services Available">
+         <font>
+            <Font size="12.0" />
+         </font></Label>
       <Label fx:id="OutputLabel" contentDisplay="TOP" layoutX="107.0" layoutY="248.0" prefHeight="95.0" prefWidth="294.0" text="payment details here">
          <font>
             <Font name="Consolas" size="12.0" />
          </font></Label>
       <TextField fx:id="NameTextField" layoutX="107.0" layoutY="67.0" prefHeight="31.0" prefWidth="294.0" />
       <TextField fx:id="AddressTextField" layoutX="108.0" layoutY="107.0" prefHeight="31.0" prefWidth="294.0" />
-      <CheckBox fx:id="FlossingCheckBox" layoutX="433.0" layoutY="71.0" mnemonicParsing="false" text="Flossing" />
-      <CheckBox fx:id="FillingCheckBox" layoutX="432.0" layoutY="114.0" mnemonicParsing="false" text="Filling" />
-      <CheckBox fx:id="RootCanalCheckBox" layoutX="432.0" layoutY="157.0" mnemonicParsing="false" text="Root Canal" />
-      <Button fx:id="CalculateButton" layoutX="512.0" layoutY="196.0" mnemonicParsing="false" onAction="#CalculateButonClick" text="Calculate" />
-      <Label layoutX="540.0" layoutY="71.0" text="\$20.00" />
-      <Label layoutX="538.0" layoutY="114.0" text="\$75.00" />
-      <Label layoutX="534.0" layoutY="157.0" text="\$150.00" />
+      <CheckBox fx:id="FlossingCheckBox" layoutX="433.0" layoutY="71.0" mnemonicParsing="false" text="Flossing">
+         <font>
+            <Font size="12.0" />
+         </font></CheckBox>
+      <CheckBox fx:id="FillingCheckBox" layoutX="432.0" layoutY="114.0" mnemonicParsing="false" text="Filling">
+         <font>
+            <Font size="12.0" />
+         </font></CheckBox>
+      <CheckBox fx:id="RootCanalCheckBox" layoutX="432.0" layoutY="157.0" mnemonicParsing="false" text="Root Canal">
+         <font>
+            <Font size="12.0" />
+         </font></CheckBox>
+      <Button fx:id="CalculateButton" layoutX="512.0" layoutY="196.0" mnemonicParsing="false" onAction="#CalculateButonClick" text="Calculate">
+         <font>
+            <Font size="12.0" />
+         </font></Button>
+      <Label layoutX="540.0" layoutY="71.0" text="\$20.00">
+         <font>
+            <Font size="12.0" />
+         </font></Label>
+      <Label layoutX="538.0" layoutY="114.0" text="\$75.00">
+         <font>
+            <Font size="12.0" />
+         </font></Label>
+      <Label layoutX="534.0" layoutY="157.0" text="\$150.00">
+         <font>
+            <Font size="12.0" />
+         </font></Label>
       <RadioButton fx:id="SeniorRadioButton" layoutX="114.0" layoutY="200.0" mnemonicParsing="false" text="Senior">
          <toggleGroup>
             <ToggleGroup fx:id="AgeToggleGroup" />
          </toggleGroup>
+         <font>
+            <Font size="12.0" />
+         </font>
       </RadioButton>
-      <RadioButton fx:id="KidsRadioButton" layoutX="210.0" layoutY="200.0" mnemonicParsing="false" text="Kids and Youth" toggleGroup="$AgeToggleGroup" />
-      <RadioButton fx:id="AdultRadioButton" layoutX="341.0" layoutY="200.0" mnemonicParsing="false" text="Adult" toggleGroup="$AgeToggleGroup" />
+      <RadioButton fx:id="KidsRadioButton" layoutX="210.0" layoutY="200.0" mnemonicParsing="false" text="Kids and Youth" toggleGroup="$AgeToggleGroup">
+         <font>
+            <Font size="12.0" />
+         </font></RadioButton>
+      <RadioButton fx:id="AdultRadioButton" layoutX="341.0" layoutY="200.0" mnemonicParsing="false" text="Adult" toggleGroup="$AgeToggleGroup">
+         <font>
+            <Font size="12.0" />
+         </font></RadioButton>
       <Label layoutX="166.0" text="Dental Payment System" textAlignment="CENTER">
          <font>
             <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <Label layoutX="50.0" layoutY="159.0" text="Province:" />
+      <Label layoutX="50.0" layoutY="159.0" text="Province:">
+         <font>
+            <Font size="12.0" />
+         </font></Label>
       <ComboBox fx:id="ProvinceComboBox" layoutX="108.0" layoutY="152.0" prefHeight="31.0" prefWidth="294.0" />
-      <Label layoutX="54.0" layoutY="287.0" text="Output:" />
+      <Label layoutX="54.0" layoutY="287.0" text="Output:">
+         <font>
+            <Font size="12.0" />
+         </font></Label>
    </children>
 </AnchorPane>
