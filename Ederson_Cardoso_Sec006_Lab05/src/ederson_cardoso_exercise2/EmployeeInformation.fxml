@@ -1,8 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity"
-	minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
-	prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141"
-	xmlns:fx="http://javafx.com/fxml/1" />
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ederson_cardoso_exercise2.EmployeeInformationController">
+   <children>
+      <Label layoutX="174.0" text="Employee Information">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="38.0" layoutY="61.0" text="Employee ID:" textAlignment="RIGHT" />
+      <Label layoutX="18.0" layoutY="110.0" text="Employee Name:" />
+      <Label layoutX="36.0" layoutY="147.0" text="Date of joing:" />
+      <Label layoutX="73.0" layoutY="183.0" text="Salary:" />
+      <TextField fx:id="IdTextField" layoutX="115.0" layoutY="57.0" prefHeight="25.0" prefWidth="174.0" />
+      <TextField fx:id="NameTextField" layoutX="115.0" layoutY="106.0" prefHeight="25.0" prefWidth="174.0" />
+      <TextField fx:id="SalaryTextField" layoutX="115.0" layoutY="179.0" prefHeight="25.0" prefWidth="174.0" />
+      <DatePicker fx:id="DateDatePicker" layoutX="115.0" layoutY="143.0" />
+      <Label layoutX="315.0" layoutY="35.0" text="List of Employees:" />
+      <TextArea layoutX="315.0" layoutY="56.0" prefHeight="202.0" prefWidth="271.0" />
+      <Button fx:id="AddButton" layoutX="37.0" layoutY="233.0" mnemonicParsing="false" onAction="#AddButtonClick" text="ADD" />
+      <Button fx:id="DisplayAllButton" layoutX="115.0" layoutY="233.0" mnemonicParsing="false" onAction="#DisplayAllButtonClick" text="DISPLAY ALL" />
+      <Button fx:id="ClearButton" layoutX="238.0" layoutY="233.0" mnemonicParsing="false" onAction="#ClearButtonClick" text="CLEAR" />
+      <Label layoutX="17.0" layoutY="297.0" text="Search Employee by ID/Name:" />
+      <TextField fx:id="SearchTextField" layoutX="188.0" layoutY="293.0" prefHeight="25.0" prefWidth="331.0" />
+      <Button fx:id="SearchButton" layoutX="533.0" layoutY="293.0" mnemonicParsing="false" onAction="#SearchButtonClick" text="Search" />
+   </children>
+</AnchorPane>
