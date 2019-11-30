@@ -98,17 +98,16 @@ public class DentalPaymentController {
 			String output = String.format("%12s %8s %n%12s %8s %n%12s %8s %n%12s %n%12s %8s", 
 					"Before tax:", currencyFormat.format(total).toString(), 
 					"Discount:", currencyFormat.format(discount).toString(),
-					"HST:", currencyFormat.format((total - discount) * hst).toString(),
-					"---------------------",
+					"HST:", currencyFormat.format((total - discount) * hst).toString(), "---------------------",
 					"Total:", currencyFormat.format(total - discount + ((total - discount) * hst))).toString();
-			
+
 			OutputLabel.setText(output);
-			
-		} catch (Exception ex) {
-			OutputLabel.setText("Error: " + ex.getMessage());
+
+		} catch (Exception e) {
+			OutputLabel.setText("Error: " + e.getMessage());
 		}
 
-	}
+	} // end CalculateButonClick
 
 	@FXML
 	void initialize() {
@@ -116,5 +115,5 @@ public class DentalPaymentController {
 		ProvinceComboBox.setValue("---Select---");
 		AdultRadioButton.setSelected(true);
 
-	}
-}
+	} // end initialize
+} // end class

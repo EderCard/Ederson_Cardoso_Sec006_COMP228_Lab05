@@ -19,53 +19,59 @@
          <font>
             <Font size="12.0" />
          </font></Label>
-      <Label layoutX="18.0" layoutY="110.0" text="Employee Name:">
+      <Label layoutX="17.0" layoutY="98.0" text="Employee Name:">
          <font>
             <Font size="12.0" />
          </font></Label>
-      <Label layoutX="36.0" layoutY="147.0" text="Date of joing:">
+      <Label layoutX="37.0" layoutY="139.0" text="Date of joing:">
          <font>
             <Font size="12.0" />
          </font></Label>
-      <Label layoutX="73.0" layoutY="183.0" text="Salary:">
+      <Label layoutX="73.0" layoutY="180.0" text="Salary:">
          <font>
             <Font size="12.0" />
          </font></Label>
       <TextField fx:id="IdTextField" layoutX="115.0" layoutY="57.0" prefHeight="25.0" prefWidth="174.0" />
-      <TextField fx:id="NameTextField" layoutX="115.0" layoutY="106.0" prefHeight="25.0" prefWidth="174.0" />
-      <TextField fx:id="SalaryTextField" layoutX="115.0" layoutY="179.0" prefHeight="25.0" prefWidth="174.0" />
-      <DatePicker fx:id="DateDatePicker" layoutX="115.0" layoutY="143.0" prefHeight="31.0" prefWidth="174.0" />
+      <TextField fx:id="NameTextField" layoutX="115.0" layoutY="94.0" prefHeight="25.0" prefWidth="174.0" />
+      <TextField fx:id="SalaryTextField" layoutX="115.0" layoutY="175.0" prefHeight="25.0" prefWidth="174.0" />
+      <DatePicker fx:id="DateDatePicker" layoutX="115.0" layoutY="132.0" prefHeight="31.0" prefWidth="174.0" />
       <Label layoutX="315.0" layoutY="35.0" text="List of Employees:">
          <font>
             <Font size="12.0" />
          </font></Label>
-      <TextArea fx:id="EmployeesListTextArea" layoutX="315.0" layoutY="56.0" prefHeight="202.0" prefWidth="271.0">
+      <TextArea fx:id="EmployeesListTextArea" layoutX="315.0" layoutY="56.0" prefHeight="195.0" prefWidth="271.0">
          <font>
             <Font size="12.0" />
          </font></TextArea>
-      <Button fx:id="AddButton" layoutX="37.0" layoutY="233.0" mnemonicParsing="false" onAction="#AddButtonClick" text="ADD">
+      <Button fx:id="AddButton" layoutX="37.0" layoutY="226.0" mnemonicParsing="false" onAction="#AddButtonClick" text="ADD">
          <font>
             <Font size="12.0" />
          </font></Button>
-      <Button fx:id="DisplayAllButton" layoutX="115.0" layoutY="233.0" mnemonicParsing="false" onAction="#DisplayAllButtonClick" text="DISPLAY ALL">
+      <Button fx:id="DisplayAllButton" layoutX="115.0" layoutY="226.0" mnemonicParsing="false" onAction="#DisplayAllButtonClick" text="DISPLAY ALL">
          <font>
             <Font size="12.0" />
          </font></Button>
-      <Button fx:id="ClearButton" layoutX="238.0" layoutY="233.0" mnemonicParsing="false" onAction="#ClearButtonClick" text="CLEAR">
+      <Button fx:id="ClearButton" layoutX="238.0" layoutY="226.0" mnemonicParsing="false" onAction="#ClearButtonClick" text="CLEAR">
          <font>
             <Font size="12.0" />
          </font></Button>
-      <Label layoutX="17.0" layoutY="297.0" text="Search Employee by ID/Name:">
+      <Label layoutX="17.0" layoutY="272.0" text="Search Employee by ID/Name:">
          <font>
             <Font size="12.0" />
          </font></Label>
-      <TextField fx:id="SearchTextField" layoutX="188.0" layoutY="293.0" prefHeight="25.0" prefWidth="331.0">
+      <TextField fx:id="SearchTextField" layoutX="188.0" layoutY="268.0" prefHeight="25.0" prefWidth="331.0">
          <font>
             <Font size="12.0" />
          </font></TextField>
-      <Button fx:id="SearchButton" layoutX="533.0" layoutY="293.0" mnemonicParsing="false" onAction="#SearchButtonClick" text="Search">
+      <Button fx:id="SearchButton" layoutX="533.0" layoutY="268.0" mnemonicParsing="false" onAction="#SearchButtonClick" text="Search">
          <font>
             <Font size="12.0" />
          </font></Button>
+      <Label fx:id="OutputLabel" layoutX="72.0" layoutY="301.0" prefHeight="41.0" prefWidth="515.0" />
+      <Label layoutX="13.0" layoutY="313.0" text="Message:">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
