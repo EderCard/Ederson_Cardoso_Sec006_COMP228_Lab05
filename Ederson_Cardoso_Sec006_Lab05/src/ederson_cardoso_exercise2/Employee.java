@@ -14,10 +14,16 @@ public class Employee {
 	}
 
 	public void setEmployeeID(int employeeID) {
-		// validate empty Name
+		// Validate empty ID
 		if (employeeID == 0) {
 			throw new IllegalArgumentException("ID cannot be null");
-		} else if (String.valueOf(employeeID).length() != 3) {
+		}
+		// Validate negative value
+		else if (employeeID < 0) {
+			throw new IllegalArgumentException("ID cannot be negative");
+		}
+		// Validate 3 digits ID
+		else if (String.valueOf(employeeID).length() != 3) {
 			throw new IllegalArgumentException("ID must have 3 digits");
 		} else {
 			this.employeeID = employeeID;
@@ -29,7 +35,7 @@ public class Employee {
 	}
 
 	public void setName(String name) {
-		// validate empty Name
+		// Validate empty Name
 		if (name == null || name.isEmpty()) {
 			throw new IllegalArgumentException("Name cannot be null");
 		} else {
@@ -42,6 +48,7 @@ public class Employee {
 	}
 
 	public void setDateJoin(LocalDate dateJoin) {
+		// Validate empty date
 		if (dateJoin == null) {
 			throw new IllegalArgumentException("Date cannot be null");
 		} else {
@@ -57,6 +64,10 @@ public class Employee {
 		// Validate negative value
 		if (salary < 0) {
 			throw new IllegalArgumentException("Salary cannot be negative");
+		}
+		// Validate 0 value
+		else if (salary == 0) {
+			throw new IllegalArgumentException("Salary cannot be zero");
 		} else {
 			this.salary = salary;
 		}
@@ -82,24 +93,7 @@ public class Employee {
 	 */
 	@Override
 	public String toString() {
-
 		return String.format("%d \t%-15s \t%-10s \t%-10.2f \n", employeeID, name, dateJoin, salary);
-
-	}
-
-	/**
-	 * This method set a new employee
-	 * 
-	 * @param employeeID
-	 * @param name
-	 * @param dateJoin
-	 * @param salary
-	 */
-	public void setEmployee(int employeeID, String name, LocalDate dateJoin, double salary) {
-		setEmployeeID(employeeID);
-		setName(name);
-		setDateJoin(dateJoin);
-		setSalary(salary);
 	}
 
 } // end class

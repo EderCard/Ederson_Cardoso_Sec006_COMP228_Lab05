@@ -7,17 +7,31 @@ import java.util.List;
 public class EmployeeRepository {
 	private static List<Employee> employeeList = new LinkedList<>();
 
+	/**
+	 * This method add a new employee to the employeeList
+	 * @param employeeID
+	 * @param name
+	 * @param dateJoin
+	 * @param salary
+	 */
 	public static void addEmployee(int employeeID, String name, LocalDate dateJoin, double salary) {
 		Employee employee = new Employee(employeeID, name, dateJoin, salary);
-		employee.setEmployee(employeeID, name, dateJoin, salary);
 		employeeList.add(employee);
 	}
 
-	public static List<Employee> getEmployeesList() {
+	/**
+	 * This method returns a employeeList
+	 * @return
+	 */
+	public static List<Employee> getEmployeeList() {
 		return employeeList;
 	}
 
-	public static String getString() {
+	/**
+	 * This method returns a employee string
+	 * @return
+	 */
+	public static String employeeString() {
 
 		String result = String.format("%s \t%-15s \t%-10s \t%-10s" + 
 				"%n--------------------------------------------------%n", 
@@ -29,6 +43,6 @@ public class EmployeeRepository {
 
 		return result;
 
-	}
+	} // end getString
 
-}
+} // end class

@@ -1,6 +1,7 @@
 package ederson_cardoso_exercise2;
 
 import java.net.URL;
+import java.time.LocalDate;
 import java.util.ResourceBundle;
 
 import javafx.event.ActionEvent;
@@ -11,7 +12,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
-public class EmployeeInformationController {
+public class EmployeeInformationController extends EmployeeRepository {
 
 	@FXML
 	private ResourceBundle resources;
@@ -60,11 +61,9 @@ public class EmployeeInformationController {
 	 */
 	private Boolean existEmployee(String inputSearch) {
 		Boolean result = false;
-		for (int counter = 0; counter < EmployeeRepository.getEmployeesList().size(); counter++) {
-			if ((inputSearch
-					.equals(Integer.toString(EmployeeRepository.getEmployeesList().get(counter).getEmployeeID())))
-					|| (inputSearch
-							.equals(EmployeeRepository.getEmployeesList().get(counter).getName().toLowerCase()))) {
+		for (int counter = 0; counter < getEmployeeList().size(); counter++) {
+			if ((inputSearch.equals(Integer.toString(getEmployeeList().get(counter).getEmployeeID())))
+					|| (inputSearch.equals(getEmployeeList().get(counter).getName().toLowerCase()))) {
 				result = true;
 			}
 		}
@@ -76,16 +75,15 @@ public class EmployeeInformationController {
 		try {
 			// Include a new employee only if not exist
 			if ((existEmployee(IdTextField.getText()) == false)) {
-				EmployeeRepository.addEmployee(Integer.parseInt(IdTextField.getText()), NameTextField.getText(),
-						DateDatePicker.getValue(), Double.parseDouble(SalaryTextField.getText()));
-
+				addEmployee(Integer.parseInt(IdTextField.getText()), NameTextField.getText(), DateDatePicker.getValue(),
+						Double.parseDouble(SalaryTextField.getText()));
 				OutputLabel.setText("Employee " + NameTextField.getText() + " registered successfully.");
 			} else {
-				OutputLabel.setText("ID " + IdTextField.getText() + " already exist.");
+				OutputLabel.setText("ERROR: ID " + IdTextField.getText() + " already exist.");
 			}
 
 		} catch (Exception e) {
-			OutputLabel.setText("Error: " + e.getMessage());
+			OutputLabel.setText("ERROR: " + e.getMessage());
 		}
 
 	} // end AddButtonClick
@@ -93,7 +91,6 @@ public class EmployeeInformationController {
 	@FXML
 	void ClearButtonClick(ActionEvent event) {
 		EmployeesListTextArea.clear();
-
 		try {
 			EmployeesListTextArea.clear();
 			SearchTextField.clear();
@@ -106,7 +103,7 @@ public class EmployeeInformationController {
 	@FXML
 	void DisplayAllButtonClick(ActionEvent event) {
 		try {
-			EmployeesListTextArea.setText(EmployeeRepository.getString());
+			EmployeesListTextArea.setText(employeeString());
 		} catch (Exception e) {
 			OutputLabel.setText("Error: " + e.getMessage());
 		}
@@ -115,8 +112,8 @@ public class EmployeeInformationController {
 	@FXML
 	void SearchButtonClick(ActionEvent event) {
 		try {
-			if (SearchTextField.getText() == null) {
-				OutputLabel.setText("Please, inform Id or Name");
+			if (SearchTextField.getText().equals("")) {
+				OutputLabel.setText("Please, inform ID or Name");
 			} else if (existEmployee(SearchTextField.getText().toLowerCase())) {
 				OutputLabel.setText("Employee Exists.");
 			} else {
@@ -130,6 +127,11 @@ public class EmployeeInformationController {
 
 	@FXML
 	void initialize() {
-
+		// Create initial list of employees
+		addEmployee(101, "John", LocalDate.of(2000, 02, 20), 68_000.00);
+		addEmployee(102, "Susan", LocalDate.of(2005, 04, 12), 55_000.00);
+		addEmployee(103, "Bob", LocalDate.of(2010, 12, 10), 92_000.00);
+		addEmployee(104, "Robert", LocalDate.of(2015, 11, 02), 55_000.00);
+		addEmployee(105, "Rose", LocalDate.of(2017, 06, 24), 77_000.00);
 	}
 }
